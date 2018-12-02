@@ -7,5 +7,9 @@ namespace CustomValidation
 {
     public class EmailValidator : Validator
     {
+        public override ValidateException Validate(dynamic candidate)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

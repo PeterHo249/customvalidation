@@ -7,5 +7,9 @@ namespace CustomValidation
 {
     public class ValidateException
     {
+        public ValidateException(int code, string message)
+        {
+
+        }
     }
 }

@@ -7,5 +7,9 @@ namespace CustomValidation
 {
     public class GreaterValidator : Validator
     {
+        public override ValidateException Validate(dynamic candidate)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
