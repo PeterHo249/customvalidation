@@ -24,6 +24,13 @@ namespace CustomValidation
             {
                 // TODO: implement exception code
                 return new ValidateException(0, _message);
+            } 
+            else
+            {
+                if (candidate.Count == 0)
+                {
+                    return new ValidateException(0, _message);
+                }
             }
 
             // TODO: Implement code here
