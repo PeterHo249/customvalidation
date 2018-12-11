@@ -9,52 +9,48 @@ namespace CustomValidation
     {
         private List<IComponentValidate> _objects;
         private Arrangement _arrangement;
-        private List<dynamic> _results;
+        private ValidateResult _result;
 
         public CompositeValidate()
         {
             this._objects = new List<IComponentValidate>();
-            this._results = new List<dynamic>();
+            _arrangement = new String();
         }
 
-        public void SetArrangement(Arrangement arm)
+        public void Add(IComponentValidate component)
         {
-            this._arrangement = arm;
+            _objects.Add(component);
         }
 
-        public void AddComponent(IComponentValidate cpn)
+        public void SetArrangement(Arrangement arrangement)
         {
-            this._objects.Add(cpn);
+            this._arrangement = arrangement;
         }
 
-        public bool Validate()
+        public void Validate()
         {
-            bool IsValid = true;
-            foreach (IComponentValidate cpn in this._objects)
+            foreach (IComponentValidate component in _objects)
             {
-                if (cpn.Validate() == false && IsValid == true)
-                {
-                    IsValid = cpn.Validate();
-                }
-                this._results.Add(cpn.GetResult(this._arrangement));
+                component.Validate();
             }
-            return IsValid;
         }
         public bool IsValid()
         {
-            return Validate();
+            if (_result == null || _result.IsEmpty())
+                return true;
+            else
+                return false;
         }
 
-        public dynamic GetResult(Arrangement arm)
+        public dynamic GetResult(Arrangement arrangement)
         {
-            return this._results;
+            return arrangement.Arrange(_result);
         }
-        public dynamic ValidateAndGetResult(Arrangement arm)
+
+        public dynamic ValidateAndGetResult(Arrangement arrangement)
         {
-            if (Validate())
-                return null;
-            else
-                return GetResult(arm);
+            Validate();
+            return GetResult(arrangement);
         }
     }
 }

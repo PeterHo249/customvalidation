@@ -9,10 +9,12 @@ namespace CustomValidation
     {
         private MonoValidate _object;
         private static Builder _instance = null;
+
         private Builder()
         {
 
         }
+
         public static Builder GetBuilder()
         {
             if (_instance == null)
@@ -22,93 +24,76 @@ namespace CustomValidation
 
         public MonoValidate GetProduct()
         {
-            return this._object; ;
+            return _object; ;
         }
 
-        Builder RuleFor(dynamic candidate)
+        public Builder RuleFor(dynamic candidate)
         {
-            this._object = new MonoValidate(candidate);
+            _object = new MonoValidate(candidate);
             return this;
         }
 
-        Builder IsEqual(dynamic x)
+        public Builder IsEqual(dynamic x, string message = null)
         {
-            this._object.AddValidator(new EqualValidator(x));
+            _object.AddValidator(new EqualValidator(x, message));
             return this;
         }
 
-        Builder IsNotEqual(dynamic x)
+        public Builder IsNotEqual(dynamic x, string message = null)
         {
-            this._object.AddValidator(new NotEqualValidator(x));
+            _object.AddValidator(new NotEqualValidator(x, message));
             return this;
         }
 
-        Builder IsGreaterThan(dynamic x)
+        public Builder IsGreaterThan(dynamic x, string message = null)
         {
-            this._object.AddValidator(new GreaterValidator(x));
+            _object.AddValidator(new GreaterValidator(x, message));
             return this;
         }
 
-        Builder IsGreaterThanOrEqual(dynamic x)
+        public Builder IsGreaterThanOrEqual(dynamic x, string message = null)
         {
-            this._object.AddValidator(new GreaterEqualValidator(x));
+            _object.AddValidator(new GreaterEqualValidator(x, message));
             return this;
         }
 
-        Builder IsLessThan(dynamic x)
+        public Builder IsLessThan(dynamic x, string message = null)
         {
-            this._object.AddValidator(new LessValidator(x));
+            _object.AddValidator(new LessValidator(x, message));
             return this;
         }
 
-        Builder IsLessThanOrEqual(dynamic x)
+        public Builder IsLessThanOrEqual(dynamic x, string message = null)
         {
-            this._object.AddValidator(new LessEqualValidator(x));
+            _object.AddValidator(new LessEqualValidator(x, message));
             return this;
         }
 
-        Builder IsBetween(dynamic x1, dynamic x2)
+        public Builder IsNotNull(string message = null)
         {
-            this._object.AddValidator(new BetweenValidator(x1, x2));
+            _object.AddValidator(new NotNullValidator(message));
             return this;
         }
 
-        Builder IsNotNull()
+        //Builder RegularExpression(string rgx)
+        //{
+        //    this._object.AddValidator(new RegularExpressionValidator(rgx));
+        //    return this;
+        //}
+
+        public Builder IsEmail(string message = null)
         {
-            this._object.AddValidator(new NotNullValidator());
+            _object.AddValidator(new EmailValidator());
             return this;
         }
 
-        Builder RegularExpression(string rgx)
+        public Builder IsNumber(string message = null)
         {
-            this._object.AddValidator(new RegularExpressionValidator(rgx));
+            _object.AddValidator(new NumberValidator());
             return this;
         }
 
-        Builder IsEmail()
-        {
-            this._object.AddValidator(new EmailValidator());
-            return this;
-        }
-        Builder IsNumber()
-        {
-            this._object.AddValidator(new NumberValidator());
-            return this;
-        }
-
-        Builder IsPhoneNumber()
-        {
-            this._object.AddValidator(new PhoneNumberValidator());
-            return this;
-        }
-
-        Builder IsVisa()
-        {
-            this._object.AddValidator(new VisaValidator());
-            return this;
-        }
-
-        Builder Must(Validator v)
+        public Builder Must(Validator v, string message = null)
         {
             this._object.AddValidator(v);
             return this;

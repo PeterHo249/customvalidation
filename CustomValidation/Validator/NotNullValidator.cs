@@ -16,8 +16,7 @@ namespace CustomValidation
         {
             if (candidate == null)
             {
-                // TODO: Implement exception code
-                return new ValidateException(0, _message);
+                return new ValidateException(ExceptionType.NULL, _message);
             }
 
             return null;

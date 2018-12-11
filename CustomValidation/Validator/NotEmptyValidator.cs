@@ -16,24 +16,20 @@ namespace CustomValidation
         {
             if (candidate is string && candidate.Length == 0)
             {
-                // TODO: implement exception code
-                return new ValidateException(0, _message);
+                return new ValidateException(ExceptionType.EMPTY, _message);
             }
 
             if (!(candidate is ICollection<dynamic>))
             {
-                // TODO: implement exception code
-                return new ValidateException(0, _message);
+                return new ValidateException(ExceptionType.INVALID_TYPE, "invalid type");
             } 
             else
             {
                 if (candidate.Count == 0)
                 {
-                    return new ValidateException(0, _message);
+                    return new ValidateException(ExceptionType.EMPTY, _message);
                 }
             }
-
-            // TODO: Implement code here
 
             return null;
         }

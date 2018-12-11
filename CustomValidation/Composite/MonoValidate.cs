@@ -13,50 +13,43 @@ namespace CustomValidation
 
         public MonoValidate(dynamic candidate)
         {
-            this._candidate = candidate;
-            this._validators = new List<Validator>();
-            this._result = new ValidateResult();
+            _candidate = candidate;
+            _validators = new List<Validator>();
         }
 
         public void AddValidator(Validator validator)
         {
-            this._validators.Add(validator);
+            _validators.Add(validator);
         }
 
-        public bool Validate()
+        public void Validate()
         {
-            bool isValid = true;
-            foreach (Validator v in this._validators)
+            _result = new ValidateResult();
+            foreach (Validator validator in _validators)
             {
-                ValidateException ex = v.Validate(this._candidate);
-                if (ex != null)
-                {
-                    this._result.Add(ex);
-                    isValid = false;
-                }
+                ValidateException exception = validator.Validate(_candidate);
+                if (exception != null)
+                    _result.Add(exception);
             }
-            return isValid;
         }
 
         public bool IsValid()
         {
-            return Validate();
+            if (_result == null || _result.IsEmpty())
+                return true;
+            else
+                return false;
         }
 
-        public dynamic GetResult(Arrangement arm)
+        public dynamic GetResult(Arrangement arrangement)
         {
-            return arm.Arrange(this._result);
+            return arrangement.Arrange(this._result);
         }
-        public dynamic ValidateAndGetResult(Arrangement arm)
+
+        public dynamic ValidateAndGetResult(Arrangement arrangement)
         {
-            if (Validate())
-            {
-                return null;
-            }
-            else
-            {
-                return GetResult(arm);
-            }
+            Validate();
+            return arrangement.Arrange(_result);
         }
     }
 }

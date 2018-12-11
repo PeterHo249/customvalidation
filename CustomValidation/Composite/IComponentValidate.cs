@@ -7,9 +7,9 @@ namespace CustomValidation
 {
     public interface IComponentValidate
     {
-        bool Validate();
+        void Validate();
         bool IsValid();
-        dynamic GetResult(Arrangement arm);
-        dynamic ValidateAndGetResult(Arrangement arm);
+        dynamic GetResult(Arrangement arrangement);
+        dynamic ValidateAndGetResult(Arrangement arrangement);
     }
 }

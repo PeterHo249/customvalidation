@@ -18,18 +18,18 @@ namespace CustomValidation
         {
             if (!(candidate is IComparable || candidate is IComparable<dynamic>))
             {
-                return new ValidateException(0, _message);
+                return new ValidateException(ExceptionType.INVALID_TYPE, "invalid type");
             }
 
             if (candidate.GetType() != _opposer.GetType())
             {
-                return new ValidateException(0, _message);
+                return new ValidateException(ExceptionType.INVALID_TYPE, "not the same type");
             }
             else
             {
                 if (candidate.CompareTo(_opposer) >= 0)
                 {
-                    return new ValidateException(0, _message);
+                    return new ValidateException(ExceptionType.NOT_LESS, _message);
                 }
             }
 

@@ -8,17 +8,28 @@ namespace CustomValidation
     public class ValidateResult
     {
         private List<ValidateException> _exceptions;
+
         public ValidateResult()
         {
             _exceptions = new List<ValidateException>() { };
         }
-        public void AddException(ValidateException exception)
+
+        public void Add(ValidateException exception)
         {
             _exceptions.Add(exception);
         }
+
         public List<ValidateException> GetList()
         {
             return _exceptions;
+        }
+
+        public bool IsEmpty()
+        {
+            if (_exceptions == null || _exceptions.Count == 0)
+                return true;
+            else
+                return false;
         }
     }
 }

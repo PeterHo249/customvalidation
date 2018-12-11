@@ -27,6 +27,7 @@ namespace CustomValidation
     {
         private ExceptionType _code;
         private string _message;
+
         public ValidateException(ExceptionType code, string message)
         {
             _code = code;
