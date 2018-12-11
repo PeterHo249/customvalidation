@@ -32,7 +32,55 @@ namespace CustomValidation
         {
             _code = code;
             if (message == null)
-                _message = "Unknown";
+            {
+                switch (code) {
+                    case ExceptionType.EMPTY:
+                        _message = "Candidate is empty.";
+                        break;
+                    case ExceptionType.EQUAL:
+                        _message = "Candidate is equal.";
+                        break;
+                    case ExceptionType.INVALID_TYPE:
+                        _message = "Candidate is invalid type.";
+                        break;
+                    case ExceptionType.NOT_DATETIME:
+                        _message = "Candidate is not date time format.";
+                        break;
+                    case ExceptionType.NOT_EMAIL:
+                        _message = "Candidate is invalid email.";
+                        break;
+                    case ExceptionType.NOT_EQUAL:
+                        _message = "Candidate is not equal.";
+                        break;
+                    case ExceptionType.NOT_GREATER:
+                        _message = "Candidate is not greater.";
+                        break;
+                    case ExceptionType.NOT_GREATER_OR_EQUAL:
+                        _message = "Candidate is not greater or equal.";
+                        break;
+                    case ExceptionType.NOT_LESS:
+                        _message = "Candidate is not less.";
+                        break;
+                    case ExceptionType.NOT_LESS_OR_EQUAL:
+                        _message = "Candidate is not less or equal.";
+                        break;
+                    case ExceptionType.NOT_MATCH:
+                        _message = "Candidate is not match pattern.";
+                        break;
+                    case ExceptionType.NOT_NUMBER:
+                        _message = "Candidate is not number.";
+                        break;
+                    case ExceptionType.NOT_SAME_TYPE:
+                        _message = "Candidate is not same type.";
+                        break;
+                    case ExceptionType.NULL:
+                        _message = "Candidate is null.";
+                        break;
+                    default:
+                        _message = "Candidate is invalid.";
+                        break;
+                }
+            }
             else
                 _message = message;
         }

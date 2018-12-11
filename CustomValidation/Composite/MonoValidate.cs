@@ -35,7 +35,7 @@ namespace CustomValidation
 
         public bool IsValid()
         {
-            if (_result == null || _result.IsEmpty())
+            if (_result == null || _result.IsValid())
                 return true;
             else
                 return false;

@@ -14,7 +14,7 @@ namespace CustomValidation
         public CompositeValidate()
         {
             this._objects = new List<IComponentValidate>();
-            _arrangement = new String();
+            _arrangement = String.Instance;
         }
 
         public void Add(IComponentValidate component)
@@ -36,7 +36,7 @@ namespace CustomValidation
         }
         public bool IsValid()
         {
-            if (_result == null || _result.IsEmpty())
+            if (_result == null || _result.IsValid())
                 return true;
             else
                 return false;

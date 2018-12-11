@@ -16,9 +16,9 @@ namespace CustomValidation
         {
             InitializeComponent();
             int candidate = 10;
-            MonoValidate monoValidate = Builder.GetBuilder().RuleFor(candidate).IsNotNull("This have to be not null.").IsGreaterThan("ab", "This have to be greater than 15").GetProduct();
+            MonoValidate monoValidate = Builder.Instance.RuleFor(candidate).IsNotNull("This have to be not null.").IsGreaterThan("ab", "This have to be greater than 15").GetProduct();
             monoValidate.Validate();
-            string result = monoValidate.GetResult(new String());
+            string result = monoValidate.GetResult(String.Instance);
             System.Diagnostics.Debug.WriteLine(result);
         }
     }

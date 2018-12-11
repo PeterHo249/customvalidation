@@ -24,7 +24,7 @@ namespace CustomValidation
             return _exceptions;
         }
 
-        public bool IsEmpty()
+        public bool IsValid()
         {
             if (_exceptions == null || _exceptions.Count == 0)
                 return true;

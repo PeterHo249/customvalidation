@@ -8,18 +8,13 @@ namespace CustomValidation
     public class Builder
     {
         private MonoValidate _object;
-        private static Builder _instance = null;
+
+        private static readonly Lazy<Builder> lazy = new Lazy<Builder>(() => new Builder());
+
+        public static Builder Instance { get { return lazy.Value; } }
 
         private Builder()
         {
-
-        }
-
-        public static Builder GetBuilder()
-        {
-            if (_instance == null)
-                _instance = new Builder();
-            return _instance;
         }
 
         public MonoValidate GetProduct()
