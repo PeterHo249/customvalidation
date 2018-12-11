@@ -23,6 +23,8 @@ namespace CustomValidation
         public override dynamic Arrange(ValidateResult result)
         {
             List<ValidateException> exceptions = result.GetList();
+            if (exceptions.Count == 0)
+                return "";
             string s = "";
             for (int i = 0; i < exceptions.Count - 1; i++)
                 s += exceptions[i].ToString() + Delimiter;

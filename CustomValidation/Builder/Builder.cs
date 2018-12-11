@@ -70,27 +70,27 @@ namespace CustomValidation
             return this;
         }
 
-        //Builder RegularExpression(string rgx)
-        //{
-        //    this._object.AddValidator(new RegularExpressionValidator(rgx));
-        //    return this;
-        //}
+        Builder RegularExpression(string rgx, string message = null)
+        {
+            _object.AddValidator(new RegularExpressionValidator(rgx, message));
+            return this;
+        }
 
         public Builder IsEmail(string message = null)
         {
-            _object.AddValidator(new EmailValidator());
+            _object.AddValidator(new EmailValidator(message));
             return this;
         }
 
         public Builder IsNumber(string message = null)
         {
-            _object.AddValidator(new NumberValidator());
+            _object.AddValidator(new NumberValidator(message));
             return this;
         }
 
-        public Builder Must(Validator v, string message = null)
+        public Builder Must(Func<dynamic, bool> func, string message = null)
         {
-            this._object.AddValidator(v);
+            _object.AddValidator(new MustValidator(func, message));
             return this;
         }
     }
