@@ -7,5 +7,6 @@ namespace CustomValidation
 {
     public abstract class Arrangement
     {
+        public abstract dynamic Arrange(ValidateResult result);
     }
 }

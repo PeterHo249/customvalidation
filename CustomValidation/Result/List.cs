@@ -7,5 +7,9 @@ namespace CustomValidation
 {
     public class List : Arrangement
     {
+        public override dynamic Arrange(ValidateResult result)
+        {
+            return result.GetList();
+        }
     }
 }
