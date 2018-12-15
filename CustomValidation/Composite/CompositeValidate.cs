@@ -2,52 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CustomValidation
 {
-    public class CompositeValidate : IComponentValidate
+    class CompositeValidate : AbstractCompositeValidate
     {
-        private List<IComponentValidate> _objects;
-        private Arrangement _arrangement;
-        private ValidateResult _result;
+        private List<AbstractCompositeValidate> _validates;
 
         public CompositeValidate()
         {
-            this._objects = new List<IComponentValidate>();
-            _arrangement = String.Instance;
+            _validates = new List<AbstractCompositeValidate>();
         }
 
-        public void Add(IComponentValidate component)
+        public void Add(AbstractCompositeValidate validate)
         {
-            _objects.Add(component);
+            _validates.Add(validate);
         }
 
-        public void SetArrangement(Arrangement arrangement)
+        public override void Validate()
         {
-            this._arrangement = arrangement;
-        }
-
-        public void Validate()
-        {
-            foreach (IComponentValidate component in _objects)
+            _result = new ValidateResult();
+            for (int i = 0; i < _validates.Count; i++)
             {
-                component.Validate();
+                _validates[i].Validate();
+                _result.Add(_validates[i].GetResult(List.Instance));
             }
         }
-        public bool IsValid()
-        {
-            if (_result == null || _result.IsValid())
-                return true;
-            else
-                return false;
-        }
 
-        public dynamic GetResult(Arrangement arrangement)
-        {
-            return arrangement.Arrange(_result);
-        }
-
-        public dynamic ValidateAndGetResult(Arrangement arrangement)
+        public override dynamic ValidateAndGetResult(Arrangement arrangement)
         {
             Validate();
             return GetResult(arrangement);

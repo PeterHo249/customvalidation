@@ -10,15 +10,41 @@ using System.Windows.Forms;
 
 namespace CustomValidation
 {
+    public class PersonalInformation
+    {
+        string _firstName;
+        string _lastName;
+        int _age;
+
+        public PersonalInformation(string firstName, string lastName, int age)
+        {
+            _firstName = firstName;
+            _lastName = lastName;
+            _age = age;
+        }
+
+        public string FirstName { get => _firstName; set => _firstName = value; }
+        public string LastName { get => _lastName; set => _lastName = value; }
+        public int Age { get => _age; set => _age = value; }
+    }
+
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            string candidate = "10.3a@adwqvfqdqdqd";
-            MonoValidate monoValidate = Builder.Instance.RuleFor(candidate).IsNotNull("This have to be not null.").Must(IsLonger10, "your string have longer than 10 character.").GetProduct();
-            monoValidate.Validate();
-            string result = monoValidate.GetResult(String.Instance);
+
+            PersonalInformation personalInformation = new PersonalInformation("Peter", null, -10);
+            
+            CompositeValidate personValidate = new CompositeValidate();
+            MonoValidate firstNameValidate = Builder.Instance.RuleFor(personalInformation.FirstName).IsNotNull("First name have to be not null").GetProduct();
+            MonoValidate lastNameValidate = Builder.Instance.RuleFor(personalInformation.LastName).IsNotNull("Last name have to be not null").GetProduct();
+            MonoValidate ageValidate = Builder.Instance.RuleFor(personalInformation.Age).IsNotNull("Age have to be not null").IsGreaterThan(0, "Age have to be greater than 0").GetProduct();
+            personValidate.Add(firstNameValidate);
+            personValidate.Add(lastNameValidate);
+            personValidate.Add(ageValidate);
+
+            string result = personValidate.ValidateAndGetResult(String.Instance);
             System.Diagnostics.Debug.WriteLine(result);
         }
 

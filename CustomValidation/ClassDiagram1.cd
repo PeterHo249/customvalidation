@@ -3,7 +3,7 @@
   <Class Name="CustomValidation.Form1" Collapsed="true">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAAGAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -32,15 +32,6 @@
       <HashCode>AAAAAAAAAACAAEACAAgAAAAAAARAAAAQAEAAAAAAAAA=</HashCode>
       <FileName>Composite\MonoValidate.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="CustomValidation.CompositeValidate" Collapsed="true">
-    <Position X="2.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAQCIAAAAAAgAAAAEAABAAAUAAEAAAAAAAAA=</HashCode>
-      <FileName>Composite\CompositeValidate.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CustomValidation.Arrangement" Collapsed="true">
     <Position X="9.75" Y="3" Width="1.5" />
@@ -52,21 +43,21 @@
   <Class Name="CustomValidation.List" Collapsed="true">
     <Position X="10.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAQAAAABAAAAA=</HashCode>
       <FileName>Result\List.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CustomValidation.String" Collapsed="true">
     <Position X="8.25" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAAggAAAAAAAAAAAAAAAQAAAABAAAAA=</HashCode>
       <FileName>Result\String.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CustomValidation.ValidateResult" Collapsed="true">
     <Position X="5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAACAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAIAAAAAAAAEAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Result\ValidateResult.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -80,7 +71,7 @@
   <Class Name="CustomValidation.Builder" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAFAAAAAAAAABQAAYCAAAAABAQAIAAAAQAAGACAAAA=</HashCode>
+      <HashCode>ABABAAAAAAQAABQAAYCAAAAABAQAAAAAQQAAGBCAAAA=</HashCode>
       <FileName>Builder\Builder.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -143,7 +134,7 @@
   <Class Name="CustomValidation.RegularExpressionValidator" Collapsed="true">
     <Position X="8.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validator\RegularExpressionValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -164,7 +155,7 @@
   <Class Name="CustomValidation.MustValidator" Collapsed="true">
     <Position X="10.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validator\MustValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -175,12 +166,5 @@
       <FileName>Validator\NotEmptyValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="CustomValidation.IComponentValidate" Collapsed="true">
-    <Position X="2.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAAAAAAgAAAAAAABAAAAAAEAAAAAAAAA=</HashCode>
-      <FileName>Composite\IComponentValidate.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

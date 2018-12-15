@@ -45,21 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Composite\CompositeValidate.cs" />
+    <Compile Include="Composite\AbstractCompositeValidate.cs" />
     <Compile Include="Result\Arrangement.cs" />
     <Compile Include="Builder\Builder.cs" />
-    <Compile Include="Composite\CompositeValidate.cs" />
     <Compile Include="Validator\EmailValidator.cs" />
     <Compile Include="Validator\NotEmptyValidator.cs" />
     <Compile Include="Validator\EqualValidator.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form1.cs" />
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Validator\GreaterEqualValidator.cs" />
     <Compile Include="Validator\GreaterValidator.cs" />
-    <Compile Include="Composite\IComponentValidate.cs" />
     <Compile Include="Validator\LessEqualValidator.cs" />
     <Compile Include="Validator\LessValidator.cs" />
     <Compile Include="Result\List.cs" />

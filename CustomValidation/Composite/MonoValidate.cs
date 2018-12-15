@@ -5,11 +5,11 @@ using System.Text;
 
 namespace CustomValidation
 {
-    public class MonoValidate : IComponentValidate
+    public class MonoValidate : AbstractCompositeValidate
     {
         private dynamic _candidate;
         private List<Validator> _validators;
-        private ValidateResult _result;
+        
 
         public MonoValidate(dynamic candidate)
         {
@@ -17,12 +17,12 @@ namespace CustomValidation
             _validators = new List<Validator>();
         }
 
-        public void AddValidator(Validator validator)
+        public void Add(Validator validator)
         {
             _validators.Add(validator);
         }
 
-        public void Validate()
+        public override void Validate()
         {
             _result = new ValidateResult();
             foreach (Validator validator in _validators)
@@ -33,20 +33,7 @@ namespace CustomValidation
             }
         }
 
-        public bool IsValid()
-        {
-            if (_result == null || _result.IsValid())
-                return true;
-            else
-                return false;
-        }
-
-        public dynamic GetResult(Arrangement arrangement)
-        {
-            return arrangement.Arrange(this._result);
-        }
-
-        public dynamic ValidateAndGetResult(Arrangement arrangement)
+        public override dynamic ValidateAndGetResult(Arrangement arrangement)
         {
             Validate();
             return arrangement.Arrange(_result);
