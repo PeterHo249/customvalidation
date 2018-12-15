@@ -10,15 +10,44 @@ using System.Windows.Forms;
 
 namespace CustomValidation
 {
+    public class PersonalInformation
+    {
+        string _firstName;
+        string _lastName;
+        int _age;
+
+        public PersonalInformation(string firstName, string lastName, int age)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
+        }
+
+        public string FirstName { get => _firstName; set => _firstName = value; }
+        public string LastName { get => _lastName; set => _lastName = value; }
+        public int Age { get => _age; set => _age = value; }
+    }
+
+    public class PersonalInformationValidate : AbstractValidator<PersonalInformation>
+    {
+        public PersonalInformationValidate()
+        {
+            RuleFor(x => x.FirstName).IsNotNull("First name have to be not null");
+            RuleFor(x => x.LastName).IsNotNull("Last name have to be not null");
+            RuleFor(x => x.Age).IsNotNull("Age have to be not null").IsGreaterThan(0,"Age have to be greater than 0");
+        }
+    }
+
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            string candidate = "10.3a@adwqvfqdqdqd";
-            MonoValidate monoValidate = Builder.Instance.RuleFor(candidate).IsNotNull("This have to be not null.").Must(IsLonger10, "your string have longer than 10 character.").GetProduct();
-            monoValidate.Validate();
-            string result = monoValidate.GetResult(String.Instance);
+
+            PersonalInformation info = new PersonalInformation("Peter", null, -10);
+            PersonalInformationValidate validate = new PersonalInformationValidate();
+            string result = validate.ValidateAndGetResult(info, String.Instance);
+            
             System.Diagnostics.Debug.WriteLine(result);
         }
 

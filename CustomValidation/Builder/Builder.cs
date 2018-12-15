@@ -19,12 +19,12 @@ namespace CustomValidation
 
         public MonoValidate GetProduct()
         {
-            return _object; ;
+            return _object;
         }
 
         public Builder RuleFor(dynamic candidate)
         {
-            _object = new MonoValidate(candidate);
+            _object = new MonoValidate();
             return this;
         }
 

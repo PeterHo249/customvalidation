@@ -5,15 +5,15 @@ using System.Text;
 
 namespace CustomValidation
 {
-    public class MonoValidate : IComponentValidate
+    public class MonoValidate
     {
         private dynamic _candidate;
         private List<Validator> _validators;
         private ValidateResult _result;
+        public Func<dynamic, dynamic> lambda;
 
-        public MonoValidate(dynamic candidate)
+        public MonoValidate()
         {
-            _candidate = candidate;
             _validators = new List<Validator>();
         }
 
@@ -22,8 +22,9 @@ namespace CustomValidation
             _validators.Add(validator);
         }
 
-        public void Validate()
+        public void Validate(dynamic candidate)
         {
+            _candidate = candidate;
             _result = new ValidateResult();
             foreach (Validator validator in _validators)
             {
@@ -46,9 +47,9 @@ namespace CustomValidation
             return arrangement.Arrange(this._result);
         }
 
-        public dynamic ValidateAndGetResult(Arrangement arrangement)
+        public dynamic ValidateAndGetResult(dynamic candidate, Arrangement arrangement)
         {
-            Validate();
+            Validate(candidate);
             return arrangement.Arrange(_result);
         }
     }
