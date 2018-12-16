@@ -2,55 +2,40 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CustomValidation
 {
-    public class CompositeValidate : IComponentValidate
+    public class CompositeValidate : ComponentValidate
     {
-        private List<IComponentValidate> _objects;
-        private Arrangement _arrangement;
-        private ValidateResult _result;
+        private List<ComponentValidate> _validates;
 
         public CompositeValidate()
         {
-            this._objects = new List<IComponentValidate>();
-            _arrangement = String.Instance;
+            _validates = new List<ComponentValidate>();
         }
 
-        public void Add(IComponentValidate component)
+        public override void Add(dynamic item)
         {
-            _objects.Add(component);
+            _validates.Add(item);
         }
 
-        public void SetArrangement(Arrangement arrangement)
+        public override void SetValidator(dynamic validator)
         {
-            this._arrangement = arrangement;
+            _validates.AddRange(validator.Validates);
         }
 
-        public void Validate()
+        public override void Validate(dynamic candidate)
         {
-            foreach (IComponentValidate component in _objects)
+            _result = new ValidateResult();
+            for (int i = 0; i < _validates.Count; i++)
             {
-                component.Validate();
+                var exceptions = _validates[i].ValidateAndGetResult(_validates[i].Lambda(candidate), List.Instance);
+                if (exceptions != null)
+                {
+                    _result.Add(exceptions);
+                }
             }
-        }
-        public bool IsValid()
-        {
-            if (_result == null || _result.IsValid())
-                return true;
-            else
-                return false;
-        }
-
-        public dynamic GetResult(Arrangement arrangement)
-        {
-            return arrangement.Arrange(_result);
-        }
-
-        public dynamic ValidateAndGetResult(Arrangement arrangement)
-        {
-            Validate();
-            return GetResult(arrangement);
         }
     }
 }

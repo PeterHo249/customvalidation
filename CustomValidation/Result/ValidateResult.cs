@@ -19,6 +19,14 @@ namespace CustomValidation
             _exceptions.Add(exception);
         }
 
+        public void Add(List<ValidateException> exceptions)
+        {
+            if (exceptions != null)
+            {
+                _exceptions = _exceptions.Concat(exceptions).ToList();
+            }
+        }
+
         public List<ValidateException> GetList()
         {
             return _exceptions;
