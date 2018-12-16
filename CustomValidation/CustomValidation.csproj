@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Composite\AbstractValidator.cs" />
+    <Compile Include="Composite\CompositeValidate.cs" />
+    <Compile Include="Composite\ComponentValidate.cs" />
     <Compile Include="Result\Arrangement.cs" />
     <Compile Include="Builder\Builder.cs" />
     <Compile Include="Validator\EmailValidator.cs" />

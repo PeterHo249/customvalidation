@@ -9,35 +9,36 @@ namespace CustomValidation
     public class AbstractValidator<T>
     {
         private T _candidate;
-        private List<MonoValidate> _validates;
+        private List<ComponentValidate> _validates;
+
+        public List<ComponentValidate> Validates { get => _validates; set => _validates = value; }
 
         public AbstractValidator()
         {
-            _validates = new List<MonoValidate>();
+            Validates = new List<ComponentValidate>();
         }
 
-        public Builder RuleFor(Func<dynamic, dynamic> lambda)
+        public Builder RuleFor(Func<dynamic, dynamic> lambda, bool isSimple = true)
         {
-            var result = Builder.Instance.RuleFor(lambda);
-            result.GetProduct().lambda = lambda;
-            _validates.Add(result.GetProduct());
+            var result = new Builder().RuleFor(lambda, isSimple);
+            Validates.Add(result.GetProduct());
             return result;
         }
 
         public void Validate(T candidate)
         {
             _candidate = candidate;
-            for (int i = 0; i < _validates.Count; i++)
+            for (int i = 0; i < Validates.Count; i++)
             {
-                _validates[i].Validate(_validates[i].lambda(candidate));
+                Validates[i].Validate(Validates[i].Lambda(candidate));
             }
         }
 
         public bool IsValid()
         {
-            for (int i = 0; i < _validates.Count; i++)
+            for (int i = 0; i < Validates.Count; i++)
             {
-                if (!_validates[i].IsValid())
+                if (!Validates[i].IsValid())
                 {
                     return false;
                 }
@@ -49,9 +50,9 @@ namespace CustomValidation
         public dynamic GetResult(Arrangement arrangement)
         {
             ValidateResult result = new ValidateResult();
-            for (int i = 0; i < _validates.Count; i++)
+            for (int i = 0; i < Validates.Count; i++)
             {
-                result.Add(_validates[i].GetResult(List.Instance));
+                result.Add(Validates[i].GetResult(List.Instance));
             }
 
             return arrangement.Arrange(result);
