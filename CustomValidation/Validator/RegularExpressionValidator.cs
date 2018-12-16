@@ -19,14 +19,19 @@ namespace CustomValidation
         {
             if (!(candidate is string))
             {
-                return new ValidateException(ExceptionType.INVALID_TYPE);
+                //return new ValidateException(ExceptionType.INVALID_TYPE);
+                return Builder.exceptionFactory.GetValidateException(ExceptionType.INVALID_TYPE);
             }
 
             Regex regex = new Regex(_pattern);
 
             if (!regex.IsMatch(candidate))
             {
-                return new ValidateException(ExceptionType.NOT_MATCH, _message);
+                //return new ValidateException(ExceptionType.NOT_MATCH, _message);
+                ValidateException ex = Builder.exceptionFactory.GetValidateException(ExceptionType.NOT_MATCH);
+                if (_message != null)
+                    ex.Message = _message;
+                return ex;
             }
 
             return null;

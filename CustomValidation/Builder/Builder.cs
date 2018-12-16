@@ -1,10 +1,12 @@
-﻿using System;
+﻿using CustomValidation.Result;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace CustomValidation
 {
+
     public class Builder
     {
         private MonoValidate _object;
@@ -12,6 +14,8 @@ namespace CustomValidation
         private static readonly Lazy<Builder> lazy = new Lazy<Builder>(() => new Builder());
 
         public static Builder Instance { get { return lazy.Value; } }
+
+        public static ValidateExceptionFactory exceptionFactory = new ValidateExceptionFactory();
 
         private Builder()
         {

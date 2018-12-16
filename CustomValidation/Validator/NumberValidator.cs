@@ -22,14 +22,19 @@ namespace CustomValidation
 
             if (!(candidate is string))
             {
-                return new ValidateException(ExceptionType.INVALID_TYPE);
+                //return new ValidateException(ExceptionType.INVALID_TYPE);
+                return Builder.exceptionFactory.GetValidateException(ExceptionType.INVALID_TYPE);
             }
 
             Regex regex = new Regex(@"^-?[0-9][0-9,\.]+$");
 
             if (!regex.IsMatch(candidate))
             {
-                return new ValidateException(ExceptionType.NOT_NUMBER, _message);
+                //return new ValidateException(ExceptionType.NOT_NUMBER, _message);
+                ValidateException ex = Builder.exceptionFactory.GetValidateException(ExceptionType.NOT_NUMBER);
+                if (_message != null)
+                    ex.Message = _message;
+                return ex;
             }
 
             return null;

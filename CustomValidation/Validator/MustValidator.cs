@@ -18,7 +18,11 @@ namespace CustomValidation
         {
             if (!_func(candidate))
             {
-                return new ValidateException(ExceptionType.CUSTOM, _message);
+                //return new ValidateException(ExceptionType.CUSTOM, _message);
+                ValidateException ex = Builder.exceptionFactory.GetValidateException(ExceptionType.CUSTOM);
+                if (_message != null)
+                    ex.Message = _message;
+                return ex;
             }
 
             return null;

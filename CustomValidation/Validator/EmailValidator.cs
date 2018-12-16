@@ -17,7 +17,8 @@ namespace CustomValidation
         {
             if (!(candidate is string))
             {
-                return new ValidateException(ExceptionType.INVALID_TYPE);
+                //return new ValidateException(ExceptionType.INVALID_TYPE);
+                return Builder.exceptionFactory.GetValidateException(ExceptionType.INVALID_TYPE);
             }
 
             const string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
@@ -28,7 +29,11 @@ namespace CustomValidation
             
             if (!regex.IsMatch(candidate))
             {
-                return new ValidateException(ExceptionType.NOT_EMAIL, _message);
+                //return new ValidateException(ExceptionType.NOT_EMAIL, _message);
+                ValidateException ex = Builder.exceptionFactory.GetValidateException(ExceptionType.NOT_EMAIL);
+                if (_message != null)
+                    ex.Message = _message;
+                return ex;
             }
 
             return null;

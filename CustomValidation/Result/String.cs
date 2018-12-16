@@ -13,7 +13,7 @@ namespace CustomValidation
 
         public static String Instance { get { return lazy.Value; } }
 
-        public char Delimiter { private get => _delimiter; set => _delimiter = value; }
+        public char Delimiter { private get { return _delimiter; } set { _delimiter = value; } }
 
         private String()
         {

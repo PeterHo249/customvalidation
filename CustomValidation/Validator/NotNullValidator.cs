@@ -16,7 +16,10 @@ namespace CustomValidation
         {
             if (candidate == null)
             {
-                return new ValidateException(ExceptionType.NULL, _message);
+                ValidateException ex = Builder.exceptionFactory.GetValidateException(ExceptionType.NULL);
+                if (_message != null)
+                    ex.Message = _message;
+                return ex;
             }
 
             return null;

@@ -48,10 +48,28 @@
     <Compile Include="Composite\AbstractValidator.cs" />
     <Compile Include="Result\Arrangement.cs" />
     <Compile Include="Builder\Builder.cs" />
+    <Compile Include="Result\CustomException.cs" />
+    <Compile Include="Result\EmptyException.cs" />
+    <Compile Include="Result\EqualException.cs" />
+    <Compile Include="Result\InvalidTypeException.cs" />
+    <Compile Include="Result\NotDatetimeException.cs" />
+    <Compile Include="Result\NotEmailException.cs" />
+    <Compile Include="Result\NotEqualException.cs" />
+    <Compile Include="Result\NotGreaterException.cs" />
+    <Compile Include="Result\NotGreaterOrEqualException.cs" />
+    <Compile Include="Result\NotLessException.cs" />
+    <Compile Include="Result\NotLessOrEqualException.cs" />
+    <Compile Include="Result\NotMatchException.cs" />
+    <Compile Include="Result\NotNumberException.cs" />
+    <Compile Include="Result\NotSameTypeException.cs" />
+    <Compile Include="Result\NullException.cs" />
+    <Compile Include="Result\ValidateExceptionFactory.cs" />
     <Compile Include="Validator\EmailValidator.cs" />
     <Compile Include="Validator\NotEmptyValidator.cs" />
     <Compile Include="Validator\EqualValidator.cs" />
-    <Compile Include="Form1.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
