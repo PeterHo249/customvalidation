@@ -50,10 +50,13 @@
     <Compile Include="Composite\ComponentValidate.cs" />
     <Compile Include="Result\Arrangement.cs" />
     <Compile Include="Builder\Builder.cs" />
+    <Compile Include="Sample.cs" />
     <Compile Include="Validator\EmailValidator.cs" />
     <Compile Include="Validator\NotEmptyValidator.cs" />
     <Compile Include="Validator\EqualValidator.cs" />
-    <Compile Include="Form1.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
