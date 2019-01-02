@@ -26,180 +26,159 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.MonoValidate">
-    <Position X="1" Y="1.75" Width="1.5" />
+  <Class Name="CustomValidation.MonoValidate" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAEACAAgAAAAAAARAAAAQAEAAAAAAAAA=</HashCode>
       <FileName>Composite\MonoValidate.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="CustomValidation.CompositeValidate">
+  <Class Name="CustomValidation.CompositeValidate" Collapsed="true">
     <Position X="2.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQCIAAAAAAgAAAAEAABAAAUAAEAAAAAAAAA=</HashCode>
       <FileName>Composite\CompositeValidate.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="CustomValidation.Arrangement">
+  <Class Name="CustomValidation.Arrangement" Collapsed="true">
     <Position X="9.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Result\Arrangement.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.List">
+  <Class Name="CustomValidation.List" Collapsed="true">
     <Position X="10.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Result\List.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.String">
+  <Class Name="CustomValidation.String" Collapsed="true">
     <Position X="8.25" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Result\String.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.ValidateResult">
+  <Class Name="CustomValidation.ValidateResult" Collapsed="true">
     <Position X="5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAACAAAAAAAAAAAAAI=</HashCode>
       <FileName>Result\ValidateResult.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.ValidateException">
+  <Class Name="CustomValidation.ValidateException" Collapsed="true">
     <Position X="5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAEAAAAAAgAAA=</HashCode>
       <FileName>Result\ValidateException.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.Builder">
+  <Class Name="CustomValidation.Builder" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABAFAAAAAAAAABQAAYCAAAAABAQAIAAAAQAAGACAAAA=</HashCode>
       <FileName>Builder\Builder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.Validator">
+  <Class Name="CustomValidation.Validator" Collapsed="true">
     <Position X="1.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
       <FileName>Validator\Validator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.NotNullValidator">
+  <Class Name="CustomValidation.NotNullValidator" Collapsed="true">
     <Position X="10.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validator\NotNullValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.EqualValidator">
+  <Class Name="CustomValidation.EqualValidator" Collapsed="true">
     <Position X="5.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Validator\EqualValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.NotEqualValidator">
+  <Class Name="CustomValidation.NotEqualValidator" Collapsed="true">
     <Position X="5.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Validator\NotEqualValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.GreaterValidator">
+  <Class Name="CustomValidation.GreaterValidator" Collapsed="true">
     <Position X="3.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Validator\GreaterValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.GreaterEqualValidator">
+  <Class Name="CustomValidation.GreaterEqualValidator" Collapsed="true">
     <Position X="3.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Validator\GreaterEqualValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.LessValidator">
+  <Class Name="CustomValidation.LessValidator" Collapsed="true">
     <Position X="1.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Validator\LessValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.LessEqualValidator">
+  <Class Name="CustomValidation.LessEqualValidator" Collapsed="true">
     <Position X="1.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Validator\LessEqualValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.BetweenValidator">
-    <Position X="12.25" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Validator\BetweenValidator.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CustomValidation.RegularExpressionValidator">
+  <Class Name="CustomValidation.RegularExpressionValidator" Collapsed="true">
     <Position X="8.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validator\RegularExpressionValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.EmailValidator">
+  <Class Name="CustomValidation.EmailValidator" Collapsed="true">
     <Position X="8.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validator\EmailValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.NumberValidator">
+  <Class Name="CustomValidation.NumberValidator" Collapsed="true">
     <Position X="7" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validator\NumberValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.PhoneNumberValidator">
-    <Position X="12.25" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Validator\PhoneNumberValidator.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CustomValidation.MustValidator">
+  <Class Name="CustomValidation.MustValidator" Collapsed="true">
     <Position X="10.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validator\MustValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CustomValidation.VisaValidator">
-    <Position X="7" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Validator\VisaValidator.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CustomValidation.NotEmptyValidator">
+  <Class Name="CustomValidation.NotEmptyValidator" Collapsed="true">
     <Position X="10.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validator\NotEmptyValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="CustomValidation.IComponentValidate">
+  <Interface Name="CustomValidation.IComponentValidate" Collapsed="true">
     <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAgAAAAAAABAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Composite\IComponentValidate.cs</FileName>
     </TypeIdentifier>
   </Interface>
