@@ -37,6 +37,12 @@ namespace CustomValidation
             return this;
         }
 
+        public Builder RuleFor(dynamic candidate)
+        {
+            _object = new MonoValidate();
+            return this;
+        }
+
         public void SetValidator(dynamic validator)
         {
             _object.SetValidator(validator);
@@ -84,7 +90,7 @@ namespace CustomValidation
             return this;
         }
 
-        Builder RegularExpression(string rgx, string message = null)
+        public Builder RegularExpression(string rgx, string message = null)
         {
             _object.Add(new RegularExpressionValidator(rgx, message));
             return this;

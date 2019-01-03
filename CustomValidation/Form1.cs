@@ -16,19 +16,15 @@ namespace CustomValidation
         {
             InitializeComponent();
 
-            PersonalInformation info = new PersonalInformation("Peter", null, -10, new Address(null, "Dong Nai", null));
+            PersonalInformation info = new PersonalInformation("Peter", null, -10, "0s1235678", new Address(null, "Dong Nai", null));
             PersonalInformationValidate validate = new PersonalInformationValidate();
             string result = validate.ValidateAndGetResult(info, String.Instance);
 
-            errorTextbox.Text = result;
-        }
+            var candidate = "as";
+            var numberValidate = new Builder().RuleFor(candidate).IsNumber("This have to be number").GetProduct();
+            result += "\n\n" + numberValidate.ValidateAndGetResult(candidate, String.Instance);
 
-        bool IsLonger10(dynamic candidate)
-        {
-            if (candidate is string && candidate.Length > 10)
-                return true;
-            else
-                return false;
+            errorTextbox.Text = result;
         }
     }
 }

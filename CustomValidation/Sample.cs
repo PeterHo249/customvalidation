@@ -11,19 +11,22 @@ namespace CustomValidation
         string _firstName;
         string _lastName;
         int _age;
+        string _phone;
         Address _address;
 
-        public PersonalInformation(string firstName, string lastName, int age, Address address)
+        public PersonalInformation(string firstName, string lastName, int age, string phone, Address address)
         {
             FirstName = firstName;
             LastName = lastName;
             Age = age;
+            Phone = phone;
             Address = address;
         }
 
         public string FirstName { get => _firstName; set => _firstName = value; }
         public string LastName { get => _lastName; set => _lastName = value; }
         public int Age { get => _age; set => _age = value; }
+        public string Phone { get => _phone; set => _phone = value; }
         public Address Address { get => _address; set => _address = value; }
     }
 
@@ -62,7 +65,16 @@ namespace CustomValidation
             RuleFor(x => x.FirstName).IsNotNull("First name have to be not null");
             RuleFor(x => x.LastName).IsNotNull("Last name have to be not null");
             RuleFor(x => x.Age).IsNotNull("Age have to be not null").IsGreaterThan(0, "Age have to be greater than 0");
+            RuleFor(x => x.Phone).IsNotNull("Phone have to be not null").RegularExpression(@"^\d+$", "Phone have to contain all digit.").Must(IsLong10Char, "Phone number have to long 10 digits");
             RuleFor(x => x.Address, false).SetValidator(new AddressValidate());
+        }
+
+        bool IsLong10Char(dynamic candidate)
+        {
+            if (candidate is string && candidate.Length == 10)
+                return true;
+            else
+                return false;
         }
     }
 }
